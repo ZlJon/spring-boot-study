@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    username: testuser
+    password: testpass
+    url: jdbc:postgresql://localhost:5432/testdb
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: account-created
+    password: app-password-issued
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.timeout: 5000
+      mail.smtp.starttls.enable: true
+logging:
+  level:
+    org.hibernate:
+      SQL: debug
+      type.descriptor.sql.BasicBinder: trace
+app:
+  host: http://localhost:8080
+server:
+  tomcat:
+    max-http-form-post-size: 5MB
